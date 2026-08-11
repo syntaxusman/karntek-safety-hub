@@ -53,11 +53,8 @@ export function Timeline() {
           return (
             <li key={milestone.year} className="relative md:grid md:grid-cols-[14rem_1fr] md:gap-16">
               <span
-                className="absolute top-3 -left-10 block h-[7px] w-[7px] rounded-full transition-colors duration-700 md:left-0 md:translate-x-0"
-                style={{
-                  backgroundColor: reached ? "var(--primary)" : "var(--hairline)",
-                  marginLeft: "0",
-                }}
+                className="absolute top-3 -left-10 block h-[7px] w-[7px] rounded-full transition-colors duration-700 md:left-[14rem]"
+                style={{ backgroundColor: reached ? "var(--primary)" : "var(--hairline)" }}
                 aria-hidden="true"
               />
               <div className="md:pr-16 md:text-right">
