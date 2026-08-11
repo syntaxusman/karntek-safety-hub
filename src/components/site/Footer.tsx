@@ -8,9 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <p className="heading text-xl tracking-[0.25em]">
-              KARN<span className="text-primary">TEK</span>
-            </p>
+            <img src="/logo.png" alt="Karntek Complete Compliance" className="h-10 w-auto" />
             <p className="mt-4 text-sm text-ink-foreground/70">
               Independent Fire &amp; Building Safety consultancy for UK residential property
               managers.
