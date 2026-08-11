@@ -75,10 +75,10 @@ function Index() {
       <StatsBar stats={homeStats} />
 
       <Section>
-        <div className="grid items-start gap-12 md:grid-cols-2">
+        <div className="grid items-start gap-16 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-24">
           <SectionHeading eyebrow="About Karntek" title="Independent fire &amp; building safety expertise" />
           <Reveal delay={100}>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg leading-[1.7] text-muted-foreground">
               Karntek works alongside managing agents, freeholders and resident management companies
               to make complex fire and building safety obligations manageable. From a single block to
               a national portfolio, we assess the risk, evidence it properly, and give you a
@@ -86,23 +86,23 @@ function Index() {
             </p>
             <Link
               to="/about"
-              className="heading mt-8 inline-flex items-center gap-2 text-sm text-primary hover:gap-3"
+              className="heading group mt-10 inline-flex items-center gap-3 border-b border-transparent pb-1 text-xs tracking-[0.25em] text-foreground transition-colors duration-500 hover:border-primary hover:text-forest"
             >
-              Learn More <ArrowRight className="h-4 w-4" />
+              Learn More <ArrowRight className="h-4 w-4 text-primary" />
             </Link>
           </Reveal>
         </div>
       </Section>
 
-      <Section className="bg-muted">
+      <Section className="border-y border-border bg-muted">
         <SectionHeading eyebrow="Why Karntek" title="Why choose us" />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-px bg-border sm:grid-cols-2 lg:grid-cols-4">
           {usps.map((usp, index) => (
-            <Reveal key={usp.title} delay={index * 80}>
-              <div className="h-full border-t-2 border-primary bg-card p-7">
-                <usp.icon className="h-8 w-8 text-primary" />
-                <h3 className="heading mt-5 text-base">{usp.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{usp.text}</p>
+            <Reveal key={usp.title} delay={index * 80} className="bg-muted">
+              <div className="h-full px-2 py-10 sm:px-8">
+                <usp.icon className="h-6 w-6 text-primary" strokeWidth={1.25} />
+                <h3 className="heading mt-8 text-xs tracking-[0.25em]">{usp.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{usp.text}</p>
               </div>
             </Reveal>
           ))}
@@ -116,10 +116,13 @@ function Index() {
 
       <Section className="bg-ink text-ink-foreground">
         <Reveal className="max-w-3xl">
-          <p className="heading mb-3 text-xs tracking-[0.25em] text-primary">Sectors</p>
-          <h2 className="heading text-3xl md:text-4xl">Sectors we work in</h2>
+          <p className="heading mb-5 flex items-center gap-4 text-[0.65rem] tracking-[0.4em] text-ink-foreground/55">
+            <span className="h-px w-8 bg-primary" aria-hidden="true" />
+            Sectors
+          </p>
+          <h2 className="heading text-2xl md:text-4xl">Sectors we work in</h2>
         </Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4">
           {sectors.map((sector, index) => {
             const Icon = sectorIcons[index] ?? Building2;
             return (
@@ -127,12 +130,12 @@ function Index() {
                 <Link
                   to="/sectors/$sector"
                   params={{ sector: sector.slug }}
-                  className="group flex h-full flex-col justify-between border border-ink-foreground/15 p-7 transition-colors hover:border-primary"
+                  className="group flex h-full flex-col justify-between border-t border-ink-foreground/15 py-10 pr-8 transition-colors duration-500 hover:border-primary"
                 >
-                  <Icon className="h-8 w-8 text-primary" />
-                  <span className="heading mt-10 flex items-center gap-2 text-sm">
+                  <Icon className="h-6 w-6 text-ink-foreground/70" strokeWidth={1.25} />
+                  <span className="heading mt-16 flex items-center gap-3 text-xs tracking-[0.2em]">
                     {sector.title}
-                    <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 text-primary" />
                   </span>
                 </Link>
               </Reveal>
@@ -147,17 +150,17 @@ function Index() {
           title="What we do"
           intro="A complete fire and building safety offering, delivered by accredited specialists."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <Reveal key={service.to} delay={index * 50}>
               <Link
                 to={service.to as never}
-                className="group flex h-full flex-col justify-between border border-border p-7 transition-colors hover:border-primary hover:bg-muted"
+                className="group flex h-full flex-col justify-between border-t border-border py-10 pr-10 transition-colors duration-500 hover:border-primary"
               >
-                <h3 className="heading text-base">{service.title}</h3>
-                <span className="heading mt-8 flex items-center gap-2 text-xs text-primary">
+                <h3 className="heading text-sm tracking-[0.2em]">{service.title}</h3>
+                <span className="heading mt-12 flex items-center gap-3 text-[0.65rem] tracking-[0.3em] text-muted-foreground transition-colors duration-500 group-hover:text-forest">
                   View Service
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 text-primary" />
                 </span>
               </Link>
             </Reveal>
@@ -165,15 +168,15 @@ function Index() {
         </div>
       </Section>
 
-      <div className="border-y border-border bg-muted">
-        <div className="mx-auto max-w-6xl px-6 pt-10">
-          <p className="heading text-center text-xs tracking-[0.25em] text-muted-foreground">
+      <div className="border-y border-border bg-muted py-8">
+        <div className="mx-auto max-w-6xl px-6 pt-8">
+          <p className="heading text-center text-[0.65rem] tracking-[0.4em] text-muted-foreground">
             Trusted by leading property managers
           </p>
         </div>
         <LogoSlider items={clientLogos} label="Client logos" />
-        <div className="mx-auto max-w-6xl px-6 pt-4">
-          <p className="heading text-center text-xs tracking-[0.25em] text-muted-foreground">
+        <div className="mx-auto max-w-6xl px-6 pt-8">
+          <p className="heading text-center text-[0.65rem] tracking-[0.4em] text-muted-foreground">
             Accreditations
           </p>
         </div>
@@ -181,7 +184,7 @@ function Index() {
       </div>
 
       <CtaBanner
-        variant="green"
+        variant="dark"
         title="SAFETY YOU CAN EVIDENCE"
         text="Book a no-obligation consultation and find out exactly where your buildings stand."
         ctaLabel="Contact Us"
