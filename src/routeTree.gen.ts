@@ -10,33 +10,441 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlindspotCalculatorRouteImport } from './routes/blindspot-calculator'
+import { Route as BookCpdSessionRouteImport } from './routes/book-cpd-session'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as AboutCareersRouteImport } from './routes/about.careers'
+import { Route as AboutTeamRouteImport } from './routes/about.team'
+import { Route as AboutTimelineRouteImport } from './routes/about.timeline'
+import { Route as IndustryUpdatesIndexRouteImport } from './routes/industry-updates.index'
+import { Route as IndustryUpdatesSlugRouteImport } from './routes/industry-updates.$slug'
+import { Route as SectorsIndexRouteImport } from './routes/sectors.index'
+import { Route as SectorsSectorRouteImport } from './routes/sectors.$sector'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesFireCompartmentationSurveysRouteImport } from './routes/services.fire-compartmentation-surveys'
+import { Route as ServicesFireRiskAssessmentsRouteImport } from './routes/services.fire-risk-assessments'
+import { Route as ServicesFireSafetyPlansRouteImport } from './routes/services.fire-safety-plans'
+import { Route as ServicesMeasuredBuildingHeightSurveysRouteImport } from './routes/services.measured-building-height-surveys'
+import { Route as ServicesProjectManagementRouteImport } from './routes/services.project-management'
+import { Route as ServicesRpeepsRouteImport } from './routes/services.rpeeps'
+import { Route as ServicesWayfindingSignageRouteImport } from './routes/services.wayfinding-signage'
+import { Route as ServicesBuildingSafetyIndexRouteImport } from './routes/services.building-safety.index'
+import { Route as ServicesBuildingSafetyBuildingSafetyCasesRouteImport } from './routes/services.building-safety.building-safety-cases'
+import { Route as ServicesBuildingSafetyFraewRouteImport } from './routes/services.building-safety.fraew'
+import { Route as ServicesBuildingSafetyHighRiseBuildingRegistrationRouteImport } from './routes/services.building-safety.high-rise-building-registration'
+import { Route as ServicesBuildingSafetyResidentEngagementStrategiesRouteImport } from './routes/services.building-safety.resident-engagement-strategies'
+import { Route as ServicesBuildingSafetyRetrospectiveFireStrategiesRouteImport } from './routes/services.building-safety.retrospective-fire-strategies'
+import { Route as ServicesBuildingSafetyStructuralRiskAssessmentsRouteImport } from './routes/services.building-safety.structural-risk-assessments'
+import { Route as ServicesFireDoorInspectionsIndexRouteImport } from './routes/services.fire-door-inspections.index'
+import { Route as ServicesFireDoorInspectionsResidentLiaisonRouteImport } from './routes/services.fire-door-inspections.resident-liaison'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlindspotCalculatorRoute = BlindspotCalculatorRouteImport.update({
+  id: '/blindspot-calculator',
+  path: '/blindspot-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookCpdSessionRoute = BookCpdSessionRouteImport.update({
+  id: '/book-cpd-session',
+  path: '/book-cpd-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutCareersRoute = AboutCareersRouteImport.update({
+  id: '/about/careers',
+  path: '/about/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTeamRoute = AboutTeamRouteImport.update({
+  id: '/about/team',
+  path: '/about/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutTimelineRoute = AboutTimelineRouteImport.update({
+  id: '/about/timeline',
+  path: '/about/timeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustryUpdatesIndexRoute = IndustryUpdatesIndexRouteImport.update({
+  id: '/industry-updates/',
+  path: '/industry-updates/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustryUpdatesSlugRoute = IndustryUpdatesSlugRouteImport.update({
+  id: '/industry-updates/$slug',
+  path: '/industry-updates/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsIndexRoute = SectorsIndexRouteImport.update({
+  id: '/sectors/',
+  path: '/sectors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SectorsSectorRoute = SectorsSectorRouteImport.update({
+  id: '/sectors/$sector',
+  path: '/sectors/$sector',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesFireCompartmentationSurveysRoute =
+  ServicesFireCompartmentationSurveysRouteImport.update({
+    id: '/services/fire-compartmentation-surveys',
+    path: '/services/fire-compartmentation-surveys',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesFireRiskAssessmentsRoute =
+  ServicesFireRiskAssessmentsRouteImport.update({
+    id: '/services/fire-risk-assessments',
+    path: '/services/fire-risk-assessments',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesFireSafetyPlansRoute = ServicesFireSafetyPlansRouteImport.update({
+  id: '/services/fire-safety-plans',
+  path: '/services/fire-safety-plans',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMeasuredBuildingHeightSurveysRoute =
+  ServicesMeasuredBuildingHeightSurveysRouteImport.update({
+    id: '/services/measured-building-height-surveys',
+    path: '/services/measured-building-height-surveys',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesProjectManagementRoute =
+  ServicesProjectManagementRouteImport.update({
+    id: '/services/project-management',
+    path: '/services/project-management',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesRpeepsRoute = ServicesRpeepsRouteImport.update({
+  id: '/services/rpeeps',
+  path: '/services/rpeeps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWayfindingSignageRoute =
+  ServicesWayfindingSignageRouteImport.update({
+    id: '/services/wayfinding-signage',
+    path: '/services/wayfinding-signage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyIndexRoute =
+  ServicesBuildingSafetyIndexRouteImport.update({
+    id: '/services/building-safety/',
+    path: '/services/building-safety/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyBuildingSafetyCasesRoute =
+  ServicesBuildingSafetyBuildingSafetyCasesRouteImport.update({
+    id: '/services/building-safety/building-safety-cases',
+    path: '/services/building-safety/building-safety-cases',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyFraewRoute =
+  ServicesBuildingSafetyFraewRouteImport.update({
+    id: '/services/building-safety/fraew',
+    path: '/services/building-safety/fraew',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyHighRiseBuildingRegistrationRoute =
+  ServicesBuildingSafetyHighRiseBuildingRegistrationRouteImport.update({
+    id: '/services/building-safety/high-rise-building-registration',
+    path: '/services/building-safety/high-rise-building-registration',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyResidentEngagementStrategiesRoute =
+  ServicesBuildingSafetyResidentEngagementStrategiesRouteImport.update({
+    id: '/services/building-safety/resident-engagement-strategies',
+    path: '/services/building-safety/resident-engagement-strategies',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyRetrospectiveFireStrategiesRoute =
+  ServicesBuildingSafetyRetrospectiveFireStrategiesRouteImport.update({
+    id: '/services/building-safety/retrospective-fire-strategies',
+    path: '/services/building-safety/retrospective-fire-strategies',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBuildingSafetyStructuralRiskAssessmentsRoute =
+  ServicesBuildingSafetyStructuralRiskAssessmentsRouteImport.update({
+    id: '/services/building-safety/structural-risk-assessments',
+    path: '/services/building-safety/structural-risk-assessments',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesFireDoorInspectionsIndexRoute =
+  ServicesFireDoorInspectionsIndexRouteImport.update({
+    id: '/services/fire-door-inspections/',
+    path: '/services/fire-door-inspections/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesFireDoorInspectionsResidentLiaisonRoute =
+  ServicesFireDoorInspectionsResidentLiaisonRouteImport.update({
+    id: '/services/fire-door-inspections/resident-liaison',
+    path: '/services/fire-door-inspections/resident-liaison',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blindspot-calculator': typeof BlindspotCalculatorRoute
+  '/book-cpd-session': typeof BookCpdSessionRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/resources': typeof ResourcesRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/timeline': typeof AboutTimelineRoute
+  '/industry-updates/$slug': typeof IndustryUpdatesSlugRoute
+  '/sectors/$sector': typeof SectorsSectorRoute
+  '/services/fire-compartmentation-surveys': typeof ServicesFireCompartmentationSurveysRoute
+  '/services/fire-risk-assessments': typeof ServicesFireRiskAssessmentsRoute
+  '/services/fire-safety-plans': typeof ServicesFireSafetyPlansRoute
+  '/services/measured-building-height-surveys': typeof ServicesMeasuredBuildingHeightSurveysRoute
+  '/services/project-management': typeof ServicesProjectManagementRoute
+  '/services/rpeeps': typeof ServicesRpeepsRoute
+  '/services/wayfinding-signage': typeof ServicesWayfindingSignageRoute
+  '/about/': typeof AboutIndexRoute
+  '/industry-updates/': typeof IndustryUpdatesIndexRoute
+  '/sectors/': typeof SectorsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/services/building-safety/building-safety-cases': typeof ServicesBuildingSafetyBuildingSafetyCasesRoute
+  '/services/building-safety/fraew': typeof ServicesBuildingSafetyFraewRoute
+  '/services/building-safety/high-rise-building-registration': typeof ServicesBuildingSafetyHighRiseBuildingRegistrationRoute
+  '/services/building-safety/resident-engagement-strategies': typeof ServicesBuildingSafetyResidentEngagementStrategiesRoute
+  '/services/building-safety/retrospective-fire-strategies': typeof ServicesBuildingSafetyRetrospectiveFireStrategiesRoute
+  '/services/building-safety/structural-risk-assessments': typeof ServicesBuildingSafetyStructuralRiskAssessmentsRoute
+  '/services/fire-door-inspections/resident-liaison': typeof ServicesFireDoorInspectionsResidentLiaisonRoute
+  '/services/building-safety/': typeof ServicesBuildingSafetyIndexRoute
+  '/services/fire-door-inspections/': typeof ServicesFireDoorInspectionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blindspot-calculator': typeof BlindspotCalculatorRoute
+  '/book-cpd-session': typeof BookCpdSessionRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/resources': typeof ResourcesRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/timeline': typeof AboutTimelineRoute
+  '/industry-updates/$slug': typeof IndustryUpdatesSlugRoute
+  '/sectors/$sector': typeof SectorsSectorRoute
+  '/services/fire-compartmentation-surveys': typeof ServicesFireCompartmentationSurveysRoute
+  '/services/fire-risk-assessments': typeof ServicesFireRiskAssessmentsRoute
+  '/services/fire-safety-plans': typeof ServicesFireSafetyPlansRoute
+  '/services/measured-building-height-surveys': typeof ServicesMeasuredBuildingHeightSurveysRoute
+  '/services/project-management': typeof ServicesProjectManagementRoute
+  '/services/rpeeps': typeof ServicesRpeepsRoute
+  '/services/wayfinding-signage': typeof ServicesWayfindingSignageRoute
+  '/about': typeof AboutIndexRoute
+  '/industry-updates': typeof IndustryUpdatesIndexRoute
+  '/sectors': typeof SectorsIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/services/building-safety/building-safety-cases': typeof ServicesBuildingSafetyBuildingSafetyCasesRoute
+  '/services/building-safety/fraew': typeof ServicesBuildingSafetyFraewRoute
+  '/services/building-safety/high-rise-building-registration': typeof ServicesBuildingSafetyHighRiseBuildingRegistrationRoute
+  '/services/building-safety/resident-engagement-strategies': typeof ServicesBuildingSafetyResidentEngagementStrategiesRoute
+  '/services/building-safety/retrospective-fire-strategies': typeof ServicesBuildingSafetyRetrospectiveFireStrategiesRoute
+  '/services/building-safety/structural-risk-assessments': typeof ServicesBuildingSafetyStructuralRiskAssessmentsRoute
+  '/services/fire-door-inspections/resident-liaison': typeof ServicesFireDoorInspectionsResidentLiaisonRoute
+  '/services/building-safety': typeof ServicesBuildingSafetyIndexRoute
+  '/services/fire-door-inspections': typeof ServicesFireDoorInspectionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blindspot-calculator': typeof BlindspotCalculatorRoute
+  '/book-cpd-session': typeof BookCpdSessionRoute
+  '/case-studies': typeof CaseStudiesRoute
+  '/contact': typeof ContactRoute
+  '/resources': typeof ResourcesRoute
+  '/about/careers': typeof AboutCareersRoute
+  '/about/team': typeof AboutTeamRoute
+  '/about/timeline': typeof AboutTimelineRoute
+  '/industry-updates/$slug': typeof IndustryUpdatesSlugRoute
+  '/sectors/$sector': typeof SectorsSectorRoute
+  '/services/fire-compartmentation-surveys': typeof ServicesFireCompartmentationSurveysRoute
+  '/services/fire-risk-assessments': typeof ServicesFireRiskAssessmentsRoute
+  '/services/fire-safety-plans': typeof ServicesFireSafetyPlansRoute
+  '/services/measured-building-height-surveys': typeof ServicesMeasuredBuildingHeightSurveysRoute
+  '/services/project-management': typeof ServicesProjectManagementRoute
+  '/services/rpeeps': typeof ServicesRpeepsRoute
+  '/services/wayfinding-signage': typeof ServicesWayfindingSignageRoute
+  '/about/': typeof AboutIndexRoute
+  '/industry-updates/': typeof IndustryUpdatesIndexRoute
+  '/sectors/': typeof SectorsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/services/building-safety/building-safety-cases': typeof ServicesBuildingSafetyBuildingSafetyCasesRoute
+  '/services/building-safety/fraew': typeof ServicesBuildingSafetyFraewRoute
+  '/services/building-safety/high-rise-building-registration': typeof ServicesBuildingSafetyHighRiseBuildingRegistrationRoute
+  '/services/building-safety/resident-engagement-strategies': typeof ServicesBuildingSafetyResidentEngagementStrategiesRoute
+  '/services/building-safety/retrospective-fire-strategies': typeof ServicesBuildingSafetyRetrospectiveFireStrategiesRoute
+  '/services/building-safety/structural-risk-assessments': typeof ServicesBuildingSafetyStructuralRiskAssessmentsRoute
+  '/services/fire-door-inspections/resident-liaison': typeof ServicesFireDoorInspectionsResidentLiaisonRoute
+  '/services/building-safety/': typeof ServicesBuildingSafetyIndexRoute
+  '/services/fire-door-inspections/': typeof ServicesFireDoorInspectionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blindspot-calculator'
+    | '/book-cpd-session'
+    | '/case-studies'
+    | '/contact'
+    | '/resources'
+    | '/about/careers'
+    | '/about/team'
+    | '/about/timeline'
+    | '/industry-updates/$slug'
+    | '/sectors/$sector'
+    | '/services/fire-compartmentation-surveys'
+    | '/services/fire-risk-assessments'
+    | '/services/fire-safety-plans'
+    | '/services/measured-building-height-surveys'
+    | '/services/project-management'
+    | '/services/rpeeps'
+    | '/services/wayfinding-signage'
+    | '/about/'
+    | '/industry-updates/'
+    | '/sectors/'
+    | '/services/'
+    | '/services/building-safety/building-safety-cases'
+    | '/services/building-safety/fraew'
+    | '/services/building-safety/high-rise-building-registration'
+    | '/services/building-safety/resident-engagement-strategies'
+    | '/services/building-safety/retrospective-fire-strategies'
+    | '/services/building-safety/structural-risk-assessments'
+    | '/services/fire-door-inspections/resident-liaison'
+    | '/services/building-safety/'
+    | '/services/fire-door-inspections/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blindspot-calculator'
+    | '/book-cpd-session'
+    | '/case-studies'
+    | '/contact'
+    | '/resources'
+    | '/about/careers'
+    | '/about/team'
+    | '/about/timeline'
+    | '/industry-updates/$slug'
+    | '/sectors/$sector'
+    | '/services/fire-compartmentation-surveys'
+    | '/services/fire-risk-assessments'
+    | '/services/fire-safety-plans'
+    | '/services/measured-building-height-surveys'
+    | '/services/project-management'
+    | '/services/rpeeps'
+    | '/services/wayfinding-signage'
+    | '/about'
+    | '/industry-updates'
+    | '/sectors'
+    | '/services'
+    | '/services/building-safety/building-safety-cases'
+    | '/services/building-safety/fraew'
+    | '/services/building-safety/high-rise-building-registration'
+    | '/services/building-safety/resident-engagement-strategies'
+    | '/services/building-safety/retrospective-fire-strategies'
+    | '/services/building-safety/structural-risk-assessments'
+    | '/services/fire-door-inspections/resident-liaison'
+    | '/services/building-safety'
+    | '/services/fire-door-inspections'
+  id:
+    | '__root__'
+    | '/'
+    | '/blindspot-calculator'
+    | '/book-cpd-session'
+    | '/case-studies'
+    | '/contact'
+    | '/resources'
+    | '/about/careers'
+    | '/about/team'
+    | '/about/timeline'
+    | '/industry-updates/$slug'
+    | '/sectors/$sector'
+    | '/services/fire-compartmentation-surveys'
+    | '/services/fire-risk-assessments'
+    | '/services/fire-safety-plans'
+    | '/services/measured-building-height-surveys'
+    | '/services/project-management'
+    | '/services/rpeeps'
+    | '/services/wayfinding-signage'
+    | '/about/'
+    | '/industry-updates/'
+    | '/sectors/'
+    | '/services/'
+    | '/services/building-safety/building-safety-cases'
+    | '/services/building-safety/fraew'
+    | '/services/building-safety/high-rise-building-registration'
+    | '/services/building-safety/resident-engagement-strategies'
+    | '/services/building-safety/retrospective-fire-strategies'
+    | '/services/building-safety/structural-risk-assessments'
+    | '/services/fire-door-inspections/resident-liaison'
+    | '/services/building-safety/'
+    | '/services/fire-door-inspections/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlindspotCalculatorRoute: typeof BlindspotCalculatorRoute
+  BookCpdSessionRoute: typeof BookCpdSessionRoute
+  CaseStudiesRoute: typeof CaseStudiesRoute
+  ContactRoute: typeof ContactRoute
+  ResourcesRoute: typeof ResourcesRoute
+  AboutCareersRoute: typeof AboutCareersRoute
+  AboutTeamRoute: typeof AboutTeamRoute
+  AboutTimelineRoute: typeof AboutTimelineRoute
+  IndustryUpdatesSlugRoute: typeof IndustryUpdatesSlugRoute
+  SectorsSectorRoute: typeof SectorsSectorRoute
+  ServicesFireCompartmentationSurveysRoute: typeof ServicesFireCompartmentationSurveysRoute
+  ServicesFireRiskAssessmentsRoute: typeof ServicesFireRiskAssessmentsRoute
+  ServicesFireSafetyPlansRoute: typeof ServicesFireSafetyPlansRoute
+  ServicesMeasuredBuildingHeightSurveysRoute: typeof ServicesMeasuredBuildingHeightSurveysRoute
+  ServicesProjectManagementRoute: typeof ServicesProjectManagementRoute
+  ServicesRpeepsRoute: typeof ServicesRpeepsRoute
+  ServicesWayfindingSignageRoute: typeof ServicesWayfindingSignageRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  IndustryUpdatesIndexRoute: typeof IndustryUpdatesIndexRoute
+  SectorsIndexRoute: typeof SectorsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+  ServicesBuildingSafetyBuildingSafetyCasesRoute: typeof ServicesBuildingSafetyBuildingSafetyCasesRoute
+  ServicesBuildingSafetyFraewRoute: typeof ServicesBuildingSafetyFraewRoute
+  ServicesBuildingSafetyHighRiseBuildingRegistrationRoute: typeof ServicesBuildingSafetyHighRiseBuildingRegistrationRoute
+  ServicesBuildingSafetyResidentEngagementStrategiesRoute: typeof ServicesBuildingSafetyResidentEngagementStrategiesRoute
+  ServicesBuildingSafetyRetrospectiveFireStrategiesRoute: typeof ServicesBuildingSafetyRetrospectiveFireStrategiesRoute
+  ServicesBuildingSafetyStructuralRiskAssessmentsRoute: typeof ServicesBuildingSafetyStructuralRiskAssessmentsRoute
+  ServicesFireDoorInspectionsResidentLiaisonRoute: typeof ServicesFireDoorInspectionsResidentLiaisonRoute
+  ServicesBuildingSafetyIndexRoute: typeof ServicesBuildingSafetyIndexRoute
+  ServicesFireDoorInspectionsIndexRoute: typeof ServicesFireDoorInspectionsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +456,260 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blindspot-calculator': {
+      id: '/blindspot-calculator'
+      path: '/blindspot-calculator'
+      fullPath: '/blindspot-calculator'
+      preLoaderRoute: typeof BlindspotCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-cpd-session': {
+      id: '/book-cpd-session'
+      path: '/book-cpd-session'
+      fullPath: '/book-cpd-session'
+      preLoaderRoute: typeof BookCpdSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/careers': {
+      id: '/about/careers'
+      path: '/about/careers'
+      fullPath: '/about/careers'
+      preLoaderRoute: typeof AboutCareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/team': {
+      id: '/about/team'
+      path: '/about/team'
+      fullPath: '/about/team'
+      preLoaderRoute: typeof AboutTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/timeline': {
+      id: '/about/timeline'
+      path: '/about/timeline'
+      fullPath: '/about/timeline'
+      preLoaderRoute: typeof AboutTimelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-updates/': {
+      id: '/industry-updates/'
+      path: '/industry-updates'
+      fullPath: '/industry-updates/'
+      preLoaderRoute: typeof IndustryUpdatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industry-updates/$slug': {
+      id: '/industry-updates/$slug'
+      path: '/industry-updates/$slug'
+      fullPath: '/industry-updates/$slug'
+      preLoaderRoute: typeof IndustryUpdatesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sectors/': {
+      id: '/sectors/'
+      path: '/sectors'
+      fullPath: '/sectors/'
+      preLoaderRoute: typeof SectorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sectors/$sector': {
+      id: '/sectors/$sector'
+      path: '/sectors/$sector'
+      fullPath: '/sectors/$sector'
+      preLoaderRoute: typeof SectorsSectorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/fire-compartmentation-surveys': {
+      id: '/services/fire-compartmentation-surveys'
+      path: '/services/fire-compartmentation-surveys'
+      fullPath: '/services/fire-compartmentation-surveys'
+      preLoaderRoute: typeof ServicesFireCompartmentationSurveysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/fire-risk-assessments': {
+      id: '/services/fire-risk-assessments'
+      path: '/services/fire-risk-assessments'
+      fullPath: '/services/fire-risk-assessments'
+      preLoaderRoute: typeof ServicesFireRiskAssessmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/fire-safety-plans': {
+      id: '/services/fire-safety-plans'
+      path: '/services/fire-safety-plans'
+      fullPath: '/services/fire-safety-plans'
+      preLoaderRoute: typeof ServicesFireSafetyPlansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/measured-building-height-surveys': {
+      id: '/services/measured-building-height-surveys'
+      path: '/services/measured-building-height-surveys'
+      fullPath: '/services/measured-building-height-surveys'
+      preLoaderRoute: typeof ServicesMeasuredBuildingHeightSurveysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/project-management': {
+      id: '/services/project-management'
+      path: '/services/project-management'
+      fullPath: '/services/project-management'
+      preLoaderRoute: typeof ServicesProjectManagementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/rpeeps': {
+      id: '/services/rpeeps'
+      path: '/services/rpeeps'
+      fullPath: '/services/rpeeps'
+      preLoaderRoute: typeof ServicesRpeepsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/wayfinding-signage': {
+      id: '/services/wayfinding-signage'
+      path: '/services/wayfinding-signage'
+      fullPath: '/services/wayfinding-signage'
+      preLoaderRoute: typeof ServicesWayfindingSignageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/': {
+      id: '/services/building-safety/'
+      path: '/services/building-safety'
+      fullPath: '/services/building-safety/'
+      preLoaderRoute: typeof ServicesBuildingSafetyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/building-safety-cases': {
+      id: '/services/building-safety/building-safety-cases'
+      path: '/services/building-safety/building-safety-cases'
+      fullPath: '/services/building-safety/building-safety-cases'
+      preLoaderRoute: typeof ServicesBuildingSafetyBuildingSafetyCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/fraew': {
+      id: '/services/building-safety/fraew'
+      path: '/services/building-safety/fraew'
+      fullPath: '/services/building-safety/fraew'
+      preLoaderRoute: typeof ServicesBuildingSafetyFraewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/high-rise-building-registration': {
+      id: '/services/building-safety/high-rise-building-registration'
+      path: '/services/building-safety/high-rise-building-registration'
+      fullPath: '/services/building-safety/high-rise-building-registration'
+      preLoaderRoute: typeof ServicesBuildingSafetyHighRiseBuildingRegistrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/resident-engagement-strategies': {
+      id: '/services/building-safety/resident-engagement-strategies'
+      path: '/services/building-safety/resident-engagement-strategies'
+      fullPath: '/services/building-safety/resident-engagement-strategies'
+      preLoaderRoute: typeof ServicesBuildingSafetyResidentEngagementStrategiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/retrospective-fire-strategies': {
+      id: '/services/building-safety/retrospective-fire-strategies'
+      path: '/services/building-safety/retrospective-fire-strategies'
+      fullPath: '/services/building-safety/retrospective-fire-strategies'
+      preLoaderRoute: typeof ServicesBuildingSafetyRetrospectiveFireStrategiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/building-safety/structural-risk-assessments': {
+      id: '/services/building-safety/structural-risk-assessments'
+      path: '/services/building-safety/structural-risk-assessments'
+      fullPath: '/services/building-safety/structural-risk-assessments'
+      preLoaderRoute: typeof ServicesBuildingSafetyStructuralRiskAssessmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/fire-door-inspections/': {
+      id: '/services/fire-door-inspections/'
+      path: '/services/fire-door-inspections'
+      fullPath: '/services/fire-door-inspections/'
+      preLoaderRoute: typeof ServicesFireDoorInspectionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/fire-door-inspections/resident-liaison': {
+      id: '/services/fire-door-inspections/resident-liaison'
+      path: '/services/fire-door-inspections/resident-liaison'
+      fullPath: '/services/fire-door-inspections/resident-liaison'
+      preLoaderRoute: typeof ServicesFireDoorInspectionsResidentLiaisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlindspotCalculatorRoute: BlindspotCalculatorRoute,
+  BookCpdSessionRoute: BookCpdSessionRoute,
+  CaseStudiesRoute: CaseStudiesRoute,
+  ContactRoute: ContactRoute,
+  ResourcesRoute: ResourcesRoute,
+  AboutCareersRoute: AboutCareersRoute,
+  AboutTeamRoute: AboutTeamRoute,
+  AboutTimelineRoute: AboutTimelineRoute,
+  IndustryUpdatesSlugRoute: IndustryUpdatesSlugRoute,
+  SectorsSectorRoute: SectorsSectorRoute,
+  ServicesFireCompartmentationSurveysRoute:
+    ServicesFireCompartmentationSurveysRoute,
+  ServicesFireRiskAssessmentsRoute: ServicesFireRiskAssessmentsRoute,
+  ServicesFireSafetyPlansRoute: ServicesFireSafetyPlansRoute,
+  ServicesMeasuredBuildingHeightSurveysRoute:
+    ServicesMeasuredBuildingHeightSurveysRoute,
+  ServicesProjectManagementRoute: ServicesProjectManagementRoute,
+  ServicesRpeepsRoute: ServicesRpeepsRoute,
+  ServicesWayfindingSignageRoute: ServicesWayfindingSignageRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  IndustryUpdatesIndexRoute: IndustryUpdatesIndexRoute,
+  SectorsIndexRoute: SectorsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+  ServicesBuildingSafetyBuildingSafetyCasesRoute:
+    ServicesBuildingSafetyBuildingSafetyCasesRoute,
+  ServicesBuildingSafetyFraewRoute: ServicesBuildingSafetyFraewRoute,
+  ServicesBuildingSafetyHighRiseBuildingRegistrationRoute:
+    ServicesBuildingSafetyHighRiseBuildingRegistrationRoute,
+  ServicesBuildingSafetyResidentEngagementStrategiesRoute:
+    ServicesBuildingSafetyResidentEngagementStrategiesRoute,
+  ServicesBuildingSafetyRetrospectiveFireStrategiesRoute:
+    ServicesBuildingSafetyRetrospectiveFireStrategiesRoute,
+  ServicesBuildingSafetyStructuralRiskAssessmentsRoute:
+    ServicesBuildingSafetyStructuralRiskAssessmentsRoute,
+  ServicesFireDoorInspectionsResidentLiaisonRoute:
+    ServicesFireDoorInspectionsResidentLiaisonRoute,
+  ServicesBuildingSafetyIndexRoute: ServicesBuildingSafetyIndexRoute,
+  ServicesFireDoorInspectionsIndexRoute: ServicesFireDoorInspectionsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
