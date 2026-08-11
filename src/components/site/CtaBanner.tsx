@@ -12,11 +12,14 @@ export function CtaBanner({
   text?: string;
   ctaLabel?: string;
   ctaTo?: string;
-  variant?: "dark" | "green";
+  variant?: "dark" | "light" | "green";
 }) {
   return (
     <section
-      className={cn("px-6 py-28 md:py-36", variant === "dark" ? "bg-ink" : "bg-muted")}
+      className={cn(
+        "px-6 py-28 md:py-36",
+        variant === "dark" ? "bg-ink" : "border-y border-border bg-muted",
+      )}
     >
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-10 md:flex-row md:items-end">
         <div className="max-w-2xl">
