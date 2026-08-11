@@ -24,7 +24,7 @@ function Page() {
     <>
       <Hero eyebrow="About" title="COMPANY TIMELINE" subtitle="A decade of growth in fire and building safety." image={heroAbout} priority />
       <Section>
-        <SectionHeading eyebrow="Milestones" title="Our journey" intro="Drag or scroll the timeline horizontally to explore each milestone." />
+        <SectionHeading eyebrow="Milestones" title="Our journey" intro="Scroll to follow the line as each milestone comes into view." />
         <Timeline />
       </Section>
       <CtaBanner />

@@ -20,13 +20,14 @@
 
 @theme inline {
   --font-sans: "Inter", "Calibri", "Segoe UI", system-ui, sans-serif;
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --radius-sm: 2px;
+  --radius-md: 2px;
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 4px;
+  --radius-4xl: 4px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -64,33 +65,39 @@
   --color-brand-foreground: var(--brand-foreground);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-forest: var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-hairline: var(--hairline);
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 3px;
   --brand: oklch(0.8 0.178 128.5);
   --brand-foreground: oklch(0.16 0 0);
-  --ink: oklch(0.17 0 0);
+  --forest: oklch(0.49 0.1 130);
+  --forest-foreground: oklch(0.99 0 0);
+  --ink: oklch(0.203 0.005 285);
   --ink-foreground: oklch(0.99 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.2 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0 0);
+  --background: oklch(0.982 0.003 100);
+  --foreground: oklch(0.203 0.005 285);
+  --card: oklch(0.995 0.002 100);
+  --card-foreground: oklch(0.203 0.005 285);
+  --popover: oklch(0.995 0.002 100);
+  --popover-foreground: oklch(0.203 0.005 285);
   --primary: oklch(0.8 0.178 128.5);
   --primary-foreground: oklch(0.16 0 0);
-  --secondary: oklch(0.52 0.004 285);
+  --secondary: oklch(0.545 0.003 285);
   --secondary-foreground: oklch(0.99 0 0);
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.52 0.004 285);
-  --accent: oklch(0.94 0.03 128.5);
+  --muted: oklch(0.957 0.004 100);
+  --muted-foreground: oklch(0.545 0.003 285);
+  --accent: oklch(0.957 0.004 100);
   --accent-foreground: oklch(0.28 0.05 128.5);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.8 0.178 128.5);
+  --border: oklch(0.545 0.003 285 / 18%);
+  --hairline: oklch(0.545 0.003 285 / 22%);
+  --input: oklch(0.545 0.003 285 / 28%);
+  --ring: oklch(0.49 0.1 130);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -150,31 +157,61 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-weight: 600;
+    font-weight: 400;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  p {
+    max-width: 65ch;
+  }
 }
 
 @utility heading {
   text-transform: uppercase;
   font-weight: 800;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+@utility display-serif {
+  font-family: var(--font-display);
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+@utility duotone {
+  filter: grayscale(1) contrast(1.05) brightness(0.96) sepia(0.18)
+    hue-rotate(48deg) saturate(1.15);
 }
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(28px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 
   &[data-visible="true"] {
     opacity: 1;
     transform: none;
+  }
+}
+
+@utility hairline {
+  border-top: 1px solid var(--hairline);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
@@ -189,4 +226,19 @@
 
 @utility animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-rise {
+  animation: rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }

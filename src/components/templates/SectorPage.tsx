@@ -55,27 +55,27 @@ export function SectorPage({
           title="Recent changes in this sector"
           intro="Placeholder summary of the legislative and regulatory shifts affecting duty holders right now."
         />
-        <ul className="mt-10 space-y-5">
+        <ul className="mt-16 space-y-8">
           {recentChanges.map((item, index) => (
             <Reveal key={item} delay={index * 60}>
-              <li className="flex gap-4 border-l-2 border-primary bg-muted p-6">
-                <TrendingUp className="h-5 w-5 shrink-0 text-primary" />
-                <span className="text-muted-foreground">{item}</span>
+              <li className="flex gap-5 border-t border-border pt-8">
+                <TrendingUp className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.25} />
+                <span className="leading-[1.7] text-muted-foreground">{item}</span>
               </li>
             </Reveal>
           ))}
         </ul>
       </Section>
 
-      <Section className="bg-muted">
+      <Section className="border-y border-border bg-muted">
         <SectionHeading eyebrow="Priorities" title="Hot topics" />
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-x-16 gap-y-12 md:grid-cols-3">
           {hotTopics.map((topic, index) => (
             <Reveal key={topic.title} delay={index * 80}>
-              <div className="h-full border border-border bg-card p-6">
-                <Flame className="h-6 w-6 text-primary" />
-                <h3 className="heading mt-4 text-base">{topic.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{topic.text}</p>
+              <div className="h-full border-t border-border pt-8">
+                <Flame className="h-5 w-5 text-primary" strokeWidth={1.25} />
+                <h3 className="heading mt-6 text-xs tracking-[0.25em]">{topic.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{topic.text}</p>
               </div>
             </Reveal>
           ))}
@@ -84,7 +84,7 @@ export function SectorPage({
 
       <Section>
         <SectionHeading eyebrow="Track Record" title="Our experience in this sector" />
-        <div className="mt-6 space-y-4 text-muted-foreground">
+        <div className="mt-8 space-y-5 leading-[1.7] text-muted-foreground">
           {experience.map((paragraph) => (
             <Reveal key={paragraph}>
               <p className="max-w-3xl">{paragraph}</p>
@@ -110,7 +110,7 @@ export function SectorPage({
 
       <Section>
         <SectionHeading eyebrow="Our Difference" title="Why use us" />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-16 grid gap-x-16 gap-y-10 md:grid-cols-2">
           {[
             "No conflict of interest — we never tender for the works we specify.",
             "Consultants with direct operational experience in this sector.",
@@ -118,7 +118,9 @@ export function SectorPage({
             "Nationwide coverage with regional teams and consistent methodology.",
           ].map((item, index) => (
             <Reveal key={item} delay={index * 60}>
-              <div className="h-full border border-border p-6 text-muted-foreground">{item}</div>
+              <div className="h-full border-t border-border pt-8 leading-relaxed text-muted-foreground">
+                {item}
+              </div>
             </Reveal>
           ))}
         </div>
@@ -126,7 +128,7 @@ export function SectorPage({
 
       <StatsBar stats={stats} />
 
-      <CtaBanner variant="green" title="LET'S REVIEW YOUR PORTFOLIO" ctaLabel="Get in Touch" />
+      <CtaBanner variant="light" title="LET'S REVIEW YOUR PORTFOLIO" ctaLabel="Get in Touch" />
 
       <Section>
         <SectionHeading eyebrow="FAQs" title="Frequently asked questions" />

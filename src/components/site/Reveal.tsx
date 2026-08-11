@@ -51,7 +51,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={cn("px-6 py-20 md:py-28", className)}>
+    <section id={id} className={cn("px-6 py-24 md:py-[9.5rem]", className)}>
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
   );
@@ -71,10 +71,15 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? (
-        <p className="heading mb-3 text-xs tracking-[0.25em] text-primary">{eyebrow}</p>
+        <p className="heading mb-5 flex items-center gap-4 text-[0.65rem] tracking-[0.4em] text-muted-foreground">
+          <span className="h-px w-8 bg-primary" aria-hidden="true" />
+          {eyebrow}
+        </p>
       ) : null}
-      <h2 className="heading text-3xl leading-tight md:text-4xl">{title}</h2>
-      {intro ? <p className="mt-4 text-base text-muted-foreground md:text-lg">{intro}</p> : null}
+      <h2 className="heading text-2xl leading-tight md:text-4xl">{title}</h2>
+      {intro ? (
+        <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">{intro}</p>
+      ) : null}
     </Reveal>
   );
 }

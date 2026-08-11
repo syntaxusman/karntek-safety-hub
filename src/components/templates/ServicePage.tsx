@@ -55,10 +55,10 @@ export function ServicePage({
       />
 
       <Section>
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-16 md:grid-cols-2 md:gap-24">
           <div>
             <SectionHeading eyebrow="Overview" title="What this service is" />
-            <div className="mt-6 space-y-4 text-muted-foreground">
+            <div className="mt-8 space-y-5 leading-[1.7] text-muted-foreground">
               {what.map((paragraph) => (
                 <Reveal key={paragraph}>
                   <p>{paragraph}</p>
@@ -68,11 +68,11 @@ export function ServicePage({
           </div>
           <div>
             <SectionHeading eyebrow="The Risk" title="Why you need it" />
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-8 space-y-5">
               {why.map((item, index) => (
                 <Reveal key={item} delay={index * 60}>
-                  <li className="flex gap-3 text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <li className="flex gap-4 border-t border-border pt-5 leading-relaxed text-muted-foreground">
+                    <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={1.25} />
                     <span>{item}</span>
                   </li>
                 </Reveal>
@@ -82,18 +82,18 @@ export function ServicePage({
         </div>
       </Section>
 
-      <Section className="bg-muted">
+      <Section className="border-y border-border bg-muted">
         <SectionHeading eyebrow="Our Difference" title="Why use us" />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-16 grid gap-x-16 gap-y-10 md:grid-cols-2">
           {whyUs.map((item, index) => (
             <Reveal key={item} delay={index * 60}>
-              <div className="flex h-full gap-4 border border-border bg-card p-6">
+              <div className="flex h-full gap-5 border-t border-border pt-8">
                 {index % 2 === 0 ? (
-                  <ShieldCheck className="h-6 w-6 shrink-0 text-primary" />
+                  <ShieldCheck className="h-5 w-5 shrink-0 text-primary" strokeWidth={1.25} />
                 ) : (
-                  <Users className="h-6 w-6 shrink-0 text-primary" />
+                  <Users className="h-5 w-5 shrink-0 text-primary" strokeWidth={1.25} />
                 )}
-                <p className="text-muted-foreground">{item}</p>
+                <p className="leading-relaxed text-muted-foreground">{item}</p>
               </div>
             </Reveal>
           ))}

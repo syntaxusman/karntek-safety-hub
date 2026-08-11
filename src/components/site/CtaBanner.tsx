@@ -12,26 +12,30 @@ export function CtaBanner({
   text?: string;
   ctaLabel?: string;
   ctaTo?: string;
-  variant?: "dark" | "green";
+  variant?: "dark" | "light" | "green";
 }) {
   return (
     <section
-      className={cn("px-6 py-16", variant === "dark" ? "bg-ink" : "bg-primary")}
+      className={cn(
+        "px-6 py-28 md:py-36",
+        variant === "dark" ? "bg-ink" : "border-y border-border bg-muted",
+      )}
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-10 md:flex-row md:items-end">
         <div className="max-w-2xl">
+          <span className="mb-8 block h-px w-16 bg-primary" />
           <h2
             className={cn(
               "heading text-2xl md:text-4xl",
-              variant === "dark" ? "text-ink-foreground" : "text-brand-foreground",
+              variant === "dark" ? "text-ink-foreground" : "text-foreground",
             )}
           >
             {title}
           </h2>
           <p
             className={cn(
-              "mt-3 text-base",
-              variant === "dark" ? "text-ink-foreground/75" : "text-brand-foreground/80",
+              "mt-5 text-base leading-relaxed",
+              variant === "dark" ? "text-ink-foreground/70" : "text-muted-foreground",
             )}
           >
             {text}
@@ -40,10 +44,10 @@ export function CtaBanner({
         <Link
           to={ctaTo}
           className={cn(
-            "heading shrink-0 px-8 py-4 text-sm transition-opacity hover:opacity-85",
+            "heading shrink-0 rounded-[2px] px-8 py-4 text-xs tracking-[0.2em] transition-colors duration-500",
             variant === "dark"
-              ? "bg-primary text-primary-foreground"
-              : "bg-ink text-ink-foreground",
+              ? "bg-primary text-primary-foreground hover:bg-forest hover:text-forest-foreground"
+              : "bg-ink text-ink-foreground hover:bg-forest",
           )}
         >
           {ctaLabel}
