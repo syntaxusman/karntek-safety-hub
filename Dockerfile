@@ -1,17 +1,17 @@
-FROM oven/bun:1 AS deps
+FROM node:22-alpine AS deps
 WORKDIR /app
 
-COPY package.json bun.lock bunfig.toml ./
-RUN bun install --frozen-lockfile
+COPY package.json ./
+RUN npm install
 
-FROM oven/bun:1 AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN NITRO_PRESET=node-server bun run build
+RUN NITRO_PRESET=node-server npm run build
 
-FROM oven/bun:1 AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -22,4 +22,4 @@ COPY --from=builder /app/.output ./.output
 
 EXPOSE 3000
 
-CMD ["bun", ".output/server/index.mjs"]
+CMD ["node", ".output/server/index.mjs"]
